@@ -1,0 +1,801 @@
+{
+	"observerUrl": "./preview/dist/team-showcase-observer.js",
+	"preferences": {
+		"previewUpdateTimeout": 0,
+		"previewDefaultBgColor": "white",
+		"enableCustomCSS": true
+	},
+	"settings": {
+		"tabs": [
+			{
+				"id": "content",
+				"name": "Content",
+				"active": true
+			},
+			{
+				"id": "layout",
+				"name": "Layout"
+			},
+			{
+				"id": "style",
+				"name": "Style"
+			}
+		],
+		"properties": [
+			{
+				"id": "members",
+				"name": "Members",
+				"description": "Add the team members you want to display in the widget.",
+				"tab": "content",
+				"type": "complex",
+				"complex": {
+					"properties": [
+						{
+							"id": "name",
+							"name": "Name",
+							"description": "Enter the name.",
+							"type": "text",
+							"defaultValue": "",
+							"allowEmpty": true
+						},
+						{
+							"id": "position",
+							"name": "Position",
+							"description": "Specify the team member's position or add any other caption you like.",
+							"type": "text",
+							"defaultValue": "",
+							"allowEmpty": true
+						},
+						{
+							"id": "photo",
+							"name": "Photo",
+							"description": "Upload the team member's photo.",
+							"type": "file",
+							"defaultValue": {
+								"name": "",
+								"url": ""
+							},
+							"allowEmpty": true
+						},
+						{
+							"id": "group",
+							"name": "Group",
+							"description": "Choose a group for the team member.",
+							"type": "select",
+							"allowEmpty": true,
+							"select": {
+								"optionsSource": "groups",
+								"enableNewSourceAdd": true
+							},
+							"defaultValue": ""
+						},
+						{
+							"id": "contactSubgroup",
+							"name": "Contact Information",
+							"type": "subgroup",
+							"subgroup": {
+								"properties": [
+									{
+										"id": "email",
+										"name": "Email",
+										"description": "Add email if necessary.",
+										"type": "text",
+										"defaultValue": "",
+										"allowEmpty": true
+									},
+									{
+										"id": "phone",
+										"name": "Phone",
+										"description": "Add phone number if necessary.",
+										"type": "text",
+										"defaultValue": "",
+										"allowEmpty": true
+									},
+									{
+										"id": "location",
+										"name": "Location",
+										"description": "Add the team member's location if necessary.",
+										"type": "text",
+										"defaultValue": "",
+										"allowEmpty": true
+									},
+									{
+										"id": "website",
+										"name": "Website",
+										"description": "Add the team member's personal website if necessary.",
+										"type": "text",
+										"defaultValue": "",
+										"allowEmpty": true
+									}
+								]
+							}
+						},
+						{
+							"id": "bioSubgroup",
+							"name": "Biography",
+							"type": "subgroup",
+							"subgroup": {
+								"properties": [
+									{
+										"id": "bio",
+										"name": "Biography",
+										"description": "Add any text or description, for example, team member's bio. This text will be displayed in the list layout, and with other layouts it will be displayed in the popup.",
+										"type": "textarea",
+										"placeholder": "",
+										"textarea": {
+											"enableRichEdit": true,
+											"enableRichEditHtml": true
+										},
+										"defaultValue": "",
+										"allowEmpty": true
+									},
+									{
+										"id": "quote",
+										"name": "Quote",
+										"description": "Add the team member's motto that characterizes them in the best way. This quote will be displayed in the list layout, and with other layouts it will be displayed in the popup.",
+										"type": "textarea",
+										"placeholder": "",
+										"textarea": {
+											"enableRichEdit": true,
+											"enableRichEditHtml": true
+										},
+										"defaultValue": "",
+										"allowEmpty": true
+									}
+								]
+							}
+						},
+						{
+							"id": "socialSubgroup",
+							"name": "Social Profiles",
+							"type": "subgroup",
+							"subgroup": {
+								"properties": [
+									{
+										"id": "socialProfiles",
+										"name": "Icons",
+										"type": "complex",
+										"complex": {
+											"nameProperty": "type",
+											"properties": [
+												{
+													"id": "url",
+													"name": "Add URL to a social profile",
+													"type": "text",
+													"defaultValue": "",
+													"description": "Enter the target page URL here. Clicking on an icon will open this page in a new browser tab."
+												},
+												{
+													"id": "type",
+													"name": "Icon",
+													"type": "select",
+													"select": {
+														"options": [
+															{
+																"value": "custom",
+																"name": "Custom"
+															},
+															{
+																"value": "500px",
+																"name": "500px"
+															},
+															{
+																"value": "amazon",
+																"name": "Amazon"
+															},
+															{
+																"value": "apple",
+																"name": "Apple"
+															},
+															{
+																"value": "badoo",
+																"name": "Badoo"
+															},
+															{
+																"value": "behance",
+																"name": "Behance"
+															},
+															{
+																"value": "blogger",
+																"name": "Blogger"
+															},
+															{
+																"value": "delicious",
+																"name": "Delicious"
+															},
+															{
+																"value": "deviantart",
+																"name": "Deviantart"
+															},
+															{
+																"value": "digg",
+																"name": "Digg"
+															},
+															{
+																"value": "disqus",
+																"name": "Disqus"
+															},
+															{
+																"value": "dribbble",
+																"name": "Dribbble"
+															},
+															{
+																"value": "envato",
+																"name": "Envato"
+															},
+															{
+																"value": "evernote",
+																"name": "Evernote"
+															},
+															{
+																"value": "facebook",
+																"name": "Facebook"
+															},
+															{
+																"value": "fb-messenger",
+																"name": "Facebook Messenger"
+															},
+															{
+																"value": "flickr",
+																"name": "Flickr"
+															},
+															{
+																"value": "flipboard",
+																"name": "Flipboard"
+															},
+															{
+																"value": "forrst",
+																"name": "Forrst"
+															},
+															{
+																"value": "foursquare",
+																"name": "Foursquare"
+															},
+															{
+																"value": "github",
+																"name": "Github"
+															},
+															{
+																"value": "google-plus",
+																"name": "Google Plus"
+															},
+															{
+																"value": "instagram",
+																"name": "Instagram"
+															},
+															{
+																"value": "itunes",
+																"name": "iTunes"
+															},
+															{
+																"value": "lastfm",
+																"name": "Last.fm"
+															},
+															{
+																"value": "line",
+																"name": "Line"
+															},
+															{
+																"value": "linkedin",
+																"name": "LinkedIn"
+															},
+															{
+																"value": "livejournal",
+																"name": "LiveJournal"
+															},
+															{
+																"value": "myspace",
+																"name": "Myspace"
+															},
+															{
+																"value": "odnoklassniki",
+																"name": "Odnoklassniki"
+															},
+															{
+																"value": "periscope",
+																"name": "Periscope"
+															},
+															{
+																"value": "pinterest",
+																"name": "Pinterest"
+															},
+															{
+																"value": "reddit",
+																"name": "Reddit"
+															},
+															{
+																"value": "skype",
+																"name": "Skype"
+															},
+															{
+																"value": "slack",
+																"name": "Slack"
+															},
+															{
+																"value": "snapchat",
+																"name": "Snapchat"
+															},
+															{
+																"value": "soundcloud",
+																"name": "SoundCloud"
+															},
+															{
+																"value": "spotify",
+																"name": "Spotify"
+															},
+															{
+																"value": "stackoverflow",
+																"name": "Stack Overflow"
+															},
+															{
+																"value": "stumbleupon",
+																"name": "StumbleUpon"
+															},
+															{
+																"value": "telegram",
+																"name": "Telegram"
+															},
+															{
+																"value": "tiktok",
+																"name": "TikTok"
+															},
+															{
+																"value": "tumblr",
+																"name": "Tumblr"
+															},
+															{
+																"value": "twitter",
+																"name": "Twitter"
+															},
+															{
+																"value": "viadeo",
+																"name": "Viadeo"
+															},
+															{
+																"value": "viber",
+																"name": "Viber"
+															},
+															{
+																"value": "vimeo",
+																"name": "Vimeo"
+															},
+															{
+																"value": "vine",
+																"name": "Vine"
+															},
+															{
+																"value": "vk",
+																"name": "Vk"
+															},
+															{
+																"value": "whatsapp",
+																"name": "WhatsApp"
+															},
+															{
+																"value": "weibo",
+																"name": "Weibo"
+															},
+															{
+																"value": "xing",
+																"name": "Xing"
+															},
+															{
+																"value": "youtube",
+																"name": "YouTube"
+															}
+														]
+													},
+													"defaultValue": "",
+													"description": "Choose the icon to display from the list. If you can't find the icon you're looking for, email us at apps@elfsight.com"
+												},
+												{
+													"id": "iconUrl",
+													"name": "Custom icon url (up to 60x60 px, png)",
+													"type": "file",
+													"defaultValue": "",
+													"visible": false,
+													"description": "Set your custom icon URL. Size: up to 60x60 px, corresponding your icons size. Format: PNG. You can upload it to any server or file manager to make it publicly available."
+												}
+											]
+										},
+										"allowEmpty": true,
+										"defaultValue": [],
+										"description": "Select the social icons you want to display on your webpage. If you can't find the icon you're looking for, email us at apps@elfsight.com"
+									}
+								]
+							}
+						},
+						{
+							"id": "externalLinkSubgroup",
+							"name": "External Link",
+							"type": "subgroup",
+							"subgroup": {
+								"properties": [
+									{
+										"id": "externalLink",
+										"name": "External Link",
+										"type": "text",
+										"caption": "You can set a link to redirect to on a click on this member. Detailed member info won’t be displayed in the popup in this case.",
+										"defaultValue": "",
+										"allowEmpty": true
+									}
+								]
+							}
+						}
+					]
+				},
+				"allowEmpty": true,
+				"defaultValue": [
+					{
+						"quote": "Keep on going, and the chances are that you will stumble on something, perhaps when you are least expecting it. I never heard of anyone ever stumbling on something sitting down.",
+						"name": "Tommie White",
+						"position": "Sales Manager",
+						"phone": "+937-877-2539",
+						"email": "tommiewhite@team.com",
+						"location": "Oakland, CA",
+						"bio": "Tommie focuses on later-stage and growth-stage investments, particularly in the industrial-technology sector. He is currently involved with Battery’s investment in Audio Precision; Physical Property Testing (PPT), a platform created with James Heal and Mecmesin; Process Sensing Technologies, a platform company created with Analytical Industries, Dynament, LDetek, Michell Instruments, NTRON, Rotronic and Status Scientific; Robotiq; and TTP Labtech.",
+						"website": "teamwebsite.com",
+						"facebook": "https://elfsight.com",
+						"twitter": "https://elfsight.com",
+						"linkedin": "https://elfsight.com",
+						"instagram": "https://elfsight.com",
+						"youtube": "https://elfsight.com",
+						"photo": "https://elfsight.com/assets/team-showcase/people/16.jpg"
+					},
+					{
+						"quote": "Don't be distracted by criticism. Remember--the only taste of success some people get is to take a bite out of you.",
+						"name": "Christopher McElroy",
+						"position": "Head of Research & Insights",
+						"phone": "+605-487-0643",
+						"email": "christophermcelroy@team.com",
+						"location": "Oakland, CA",
+						"bio": "Christopher focuses on later-stage and growth-stage investments, particularly in the industrial-technology sector. He is currently involved with Battery’s investment in Audio Precision; Physical Property Testing (PPT), a platform created with James Heal and Mecmesin; Process Sensing Technologies, a platform company created with Analytical Industries, Dynament, LDetek, Michell Instruments, NTRON, Rotronic and Status Scientific; Robotiq; and TTP Labtech.",
+						"website": "teamwebsite.com",
+						"facebook": "https://elfsight.com",
+						"twitter": "https://elfsight.com",
+						"linkedin": "https://elfsight.com",
+						"instagram": "https://elfsight.com",
+						"youtube": "https://elfsight.com",
+						"photo": "https://elfsight.com/assets/team-showcase/people/15.jpg"
+					},
+					{
+						"quote": "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+						"name": "Delores Olin",
+						"position": "Content Director",
+						"phone": "+209-376-2325",
+						"email": "deloresolin@team.com",
+						"location": "Los Angeles, CA",
+						"bio": "Delores focuses on later-stage and growth-stage investments, particularly in the industrial-technology sector. He is currently involved with Battery’s investment in Audio Precision; Physical Property Testing (PPT), a platform created with James Heal and Mecmesin; Process Sensing Technologies, a platform company created with Analytical Industries, Dynament, LDetek, Michell Instruments, NTRON, Rotronic and Status Scientific; Robotiq; and TTP Labtech.",
+						"website": "teamwebsite.com",
+						"facebook": "https://elfsight.com",
+						"twitter": "https://elfsight.com",
+						"linkedin": "https://elfsight.com",
+						"instagram": "https://elfsight.com",
+						"youtube": "https://elfsight.com",
+						"photo": "https://elfsight.com/assets/team-showcase/people/14.jpg"
+					},
+					{
+						"quote": "There is a powerful driving force inside every human being that, once unleashed, can make any vision, dream, or desire a reality.",
+						"name": "Alan Daniel",
+						"position": "Strategic PR Specialist",
+						"phone": "+641-788-8870",
+						"email": "alandaniel@team.com",
+						"location": "Oakland, CA",
+						"bio": "Alan focuses on later-stage and growth-stage investments, particularly in the industrial-technology sector. He is currently involved with Battery’s investment in Audio Precision; Physical Property Testing (PPT), a platform created with James Heal and Mecmesin; Process Sensing Technologies, a platform company created with Analytical Industries, Dynament, LDetek, Michell Instruments, NTRON, Rotronic and Status Scientific; Robotiq; and TTP Labtech.",
+						"website": "teamwebsite.com",
+						"facebook": "https://elfsight.com",
+						"twitter": "https://elfsight.com",
+						"linkedin": "https://elfsight.com",
+						"instagram": "https://elfsight.com",
+						"youtube": "https://elfsight.com",
+						"photo": "https://elfsight.com/assets/team-showcase/people/13.jpg"
+					},
+					{
+						"quote": "The way to get started is to quit talking and begin doing.",
+						"name": "Irina Grooms",
+						"position": "Executive Director",
+						"phone": "+714-263-5408",
+						"email": "irinagrooms@team.com",
+						"location": "Los Angeles, CA",
+						"bio": "Irina focuses on later-stage and growth-stage investments, particularly in the industrial-technology sector. He is currently involved with Battery’s investment in Audio Precision; Physical Property Testing (PPT), a platform created with James Heal and Mecmesin; Process Sensing Technologies, a platform company created with Analytical Industries, Dynament, LDetek, Michell Instruments, NTRON, Rotronic and Status Scientific; Robotiq; and TTP Labtech.",
+						"website": "teamwebsite.com",
+						"facebook": "https://elfsight.com",
+						"twitter": "https://elfsight.com",
+						"linkedin": "https://elfsight.com",
+						"instagram": "https://elfsight.com",
+						"youtube": "https://elfsight.com",
+						"photo": "https://elfsight.com/assets/team-showcase/people/12.jpg"
+					},
+					{
+						"quote": "Don't let the fear of losing be greater than the excitement of winning.",
+						"name": "Micheal Schrock",
+						"position": "General Manager",
+						"phone": "+906-622-1345",
+						"email": "michealschrock@team.com",
+						"location": "Los Angeles, CA",
+						"bio": "Micheal focuses on later-stage and growth-stage investments, particularly in the industrial-technology sector. He is currently involved with Battery’s investment in Audio Precision; Physical Property Testing (PPT), a platform created with James Heal and Mecmesin; Process Sensing Technologies, a platform company created with Analytical Industries, Dynament, LDetek, Michell Instruments, NTRON, Rotronic and Status Scientific; Robotiq; and TTP Labtech.",
+						"website": "teamwebsite.com",
+						"facebook": "https://elfsight.com",
+						"twitter": "https://elfsight.com",
+						"linkedin": "https://elfsight.com",
+						"instagram": "https://elfsight.com",
+						"youtube": "https://elfsight.com",
+						"photo": "https://elfsight.com/assets/team-showcase/people/11.jpg"
+					}
+				]
+			},
+			{
+				"id": "groupsSubgroup",
+				"name": "Groups",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "groupsEnabled",
+							"name": "Enable groups",
+							"description": "Activate this option to group your team members by departments, geographical location or any other criteria.",
+							"type": "toggle",
+							"defaultValue": false
+						},
+						{
+							"id": "groupsDisplay",
+							"name": "How to display groups",
+							"description": "Choose the display mode for team member groups. List allows you to display every group one after another, and Filters allows you to filter all team members by the requied group.",
+							"type": "select-inline",
+							"selectInline": {
+								"options": [
+									{
+										"value": "list",
+										"name": "List"
+									},
+									{
+										"value": "filters",
+										"name": "Filters"
+									}
+								]
+							},
+							"defaultValue": "filters"
+						},
+						{
+							"id": "showAllTab",
+							"name": "Show All Tab",
+							"type": "toggle",
+							"defaultValue": true,
+							"description": "Set this option to ON to show All tab"
+						},
+						{
+							"id": "groups",
+							"name": "Groups",
+							"description": "Create your groups.",
+							"global": true,
+							"tab": "content",
+							"type": "complex",
+							"complex": {
+								"nameProperty": "name",
+								"idProperty": "value",
+								"properties": [
+									{
+										"id": "name",
+										"name": "Name",
+										"description": "Set the group name.",
+										"type": "text",
+										"defaultValue": ""
+									},
+									{
+										"type": "static-html",
+										"name": "",
+										"staticHtml": {
+											"content": "<div style=\"font-size:13px;\">Note: Add at least one person in order for the group to display.</div>"
+										}
+									},
+									{
+										"id": "value",
+										"name": "Value",
+										"type": "text",
+										"visible": false
+									}
+								]
+							},
+							"defaultValue": [],
+							"caption": ""
+						}
+					]
+				}
+			},
+			{
+				"id": "widgetTitleSubgroup",
+				"name": "Widget Title",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "widgetTitle",
+							"name": "Widget Title",
+							"caption": "Add a title if necessary. It will be displayed above the list of team members.",
+							"tab": "content",
+							"type": "text",
+							"defaultValue": "Meet Our Team",
+							"allowEmpty": true
+						}
+					]
+				}
+			},
+			{
+				"id": "ctaSubgroup",
+				"name": "Call to Action",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "ctaVisible",
+							"name": "Show call to action",
+							"description": "Set this optino to ON to display a call to action below team members list. Use this functionality to invite people to join your team, or to encourage them contact you.",
+							"type": "toggle",
+							"defaultValue": true
+						},
+						{
+							"id": "ctaTitle",
+							"name": "Title",
+							"description": "Set call to action text.",
+							"type": "text",
+							"defaultValue": "Join our growing team!",
+							"allowEmpty": true
+						},
+						{
+							"id": "ctaButtonText",
+							"name": "Button Text",
+							"description": "Set call to action button text",
+							"type": "text",
+							"defaultValue": "See job openings",
+							"allowEmpty": true
+						},
+						{
+							"id": "ctaButtonLink",
+							"name": "Button Link",
+							"description": "Set the URL to redirect people to on a call to action button click.",
+							"type": "text",
+							"defaultValue": "https://elfsight.com/",
+							"allowEmpty": true
+						}
+					]
+				}
+			},
+			{
+				"id": "messagesSubgroup",
+				"name": "Messages",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "seeInfoMessage",
+							"name": "See Info",
+							"description": "",
+							"type": "text",
+							"defaultValue": "See Info"
+						},
+						{
+							"id": "allMessage",
+							"name": "All",
+							"description": "",
+							"type": "text",
+							"defaultValue": "All"
+						},
+						{
+							"id": "ungroupedMessage",
+							"name": "Ungrouped",
+							"description": "",
+							"type": "text",
+							"defaultValue": "Ungrouped"
+						}
+					]
+				}
+			},
+			{
+				"id": "layout",
+				"name": "How to display your team",
+				"description": "Choose the display mode for your team.",
+				"tab": "layout",
+				"type": "select-visual",
+				"defaultValue": "grid",
+				"select": {
+					"options": [
+						{
+							"value": "grid",
+							"name": "Grid",
+							"img": "https://elfsight.com/assets/team-showcase/select-visual/grid2x.png"
+						},
+						{
+							"value": "cards",
+							"name": "Cards",
+							"img": "https://elfsight.com/assets/team-showcase/select-visual/cards2x.png"
+						},
+						{
+							"value": "gallery",
+							"name": "Gallery",
+							"img": "https://elfsight.com/assets/team-showcase/select-visual/gallery2x.png"
+						},
+						{
+							"value": "list",
+							"name": "List",
+							"img": "https://elfsight.com/assets/team-showcase/select-visual/list2x.png"
+						}
+					]
+				}
+			},
+			{
+				"id": "width",
+				"name": "Width",
+				"tab": "layout",
+				"type": "text",
+				"defaultValue": "auto",
+				"description": ""
+			},
+			{
+				"id": "textAlign",
+				"name": "Text align",
+				"description": "Align team member info to the left or in the center.",
+				"tab": "layout",
+				"type": "select-inline",
+				"selectInline": {
+					"options": [
+						{
+							"value": "left",
+							"name": "Left"
+						},
+						{
+							"value": "center",
+							"name": "Center"
+						}
+					]
+				},
+				"defaultValue": "left"
+			},
+			{
+				"id": "backgroundColor",
+				"name": "Widget Background Color",
+				"description": "Set the widget background color.",
+				"tab": "style",
+				"type": "color",
+				"allowEmpty": true,
+				"defaultValue": null
+			},
+			{
+				"id": "itemBackgroundColor",
+				"name": "Item Background Color",
+				"description": "Set the item background color.",
+				"tab": "style",
+				"type": "color",
+				"allowEmpty": true,
+				"defaultValue": null
+			},
+			{
+				"id": "textColor",
+				"name": "Text Color",
+				"description": "Set the text color.",
+				"tab": "style",
+				"type": "color",
+				"defaultValue": "rgb(29, 33, 41)"
+			},
+			{
+				"id": "linksColor",
+				"name": "Links Color",
+				"tab": "style",
+				"type": "color",
+				"defaultValue": "#1c91ff",
+				"description": ""
+			},
+			{
+				"id": "ctaButtonColor",
+				"name": "Call to Action Button Color",
+				"description": "Set the call to action button color.",
+				"tab": "style",
+				"type": "color",
+				"defaultValue": "rgb(53, 120, 228)"
+			}
+		]
+	}
+}
